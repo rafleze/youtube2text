@@ -23,7 +23,7 @@ To use the plugin:
 2. Enter the YouTube video link and the language code for transcription.
 3. The Cheshire Cat AI conversational form will handle the transcription process.
 
-[![Demo](https://github.com/rafleze/youtube2text/blob/develop/demo.gif.png?raw=true)](https://)
+[![Demo](https://github.com/rafleze/youtube2text/blob/develop/demo.gif?raw=true)](https://)
 
 ## Contributing
 There are no specific instructions for contributing to the project. Users interested in improving the plugin can open an issue or a pull request on the GitHub repository.
