@@ -11,7 +11,7 @@ Youtube 2 Text is a plugin that automatically transcribes the content of YouTube
 [![Youtube 2 Text](https://github.com/rafleze/youtube2text/blob/develop/transcribercat.png?raw=true)](https://)
 
 ## Requirements
-- Cheshire Cat AI version 1.5.1 or higher
+- Cheshire Cat AI version 1.6.1 or higher
 
 ## Installation
 To install the plugin, clone the repository into the `plugins` directory of Cheshire Cat AI
