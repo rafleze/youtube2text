@@ -2,6 +2,9 @@
 
 [![Awesome plugin](https://custom-icon-badges.demolab.com/static/v1?label=&message=Awesome+plugin&color=000000&style=for-the-badge&logo=cheshire_cat_ai)](https://)
 
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/python/black)
+[![codecov](https://codecov.io/gh/rafleze/youtube2text/branch/main/graph/badge.svg?token=A229TF8PLG)](https://codecov.io/gh/rafleze/youtube2text)
+
 ## Description
 Youtube 2 Text is a plugin that automatically transcribes the content of YouTube videos. It operates simply put a link to the video and the desired language code into the [Cheshire Cat AI](https://github.com/cheshire-cat-ai) conversational form.
 
