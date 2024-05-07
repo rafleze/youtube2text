@@ -1,0 +1,27 @@
+[tool.black]
+target-version = ["py311"]
+
+[tool.coverage.report]
+fail_under = 100
+show_missing = true
+
+[tool.coverage.run]
+branch = true
+concurrency = ["multiprocessing"]
+disable_warnings = ["no-data-collected"]
+omit = [
+    ".venv/*",
+    "tests/*",
+    "youtube_to_text.py",
+    "custom_cipher.py",
+    "*/__init__.py",
+]
+source = ["."]
+
+[tool.ruff]
+extend-exclude = [
+    "__pycache__",
+    ".pytest_cache",
+    ".vscode*",
+    "custom_cipher.py",
+]

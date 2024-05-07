@@ -1,10 +1,10 @@
 {
-    "name": "My plugin",
+    "name": "Youtube 2 text",
     "version": "0.0.1",
-    "description": "Description of my_plugin.",
-    "author_name": "Me",
-    "author_url": "https://mywebsite.me",
-    "plugin_url": "https://github.com/my_name/my_plugin",
-    "tags": "cat, template, example",
-    "thumb": "https://raw.githubusercontent.com/my_repo_path/my_plugin.png"
+    "description": "A plugin to transcript a youtube video to text. Just past the video link and wait for the response!",
+    "author_name": "rafleze",
+    "author_url": "https://github.com/rafleze",
+    "plugin_url": "https://github.com/rafleze/youtube2text",
+    "tags": "cat, youtube, transcript, text",
+    "thumb": "https://github.com/rafleze/youtube2text/blob/develop/transcribercat.png?raw=true"
 }
