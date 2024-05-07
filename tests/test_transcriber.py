@@ -1,7 +1,7 @@
 import pytest
 from unittest import TestCase
 from unittest.mock import patch
-from youtube2text.transcriber import transcribe
+from ..transcriber import transcribe
 
 
 @patch("youtube2text.transcriber.YouTube")

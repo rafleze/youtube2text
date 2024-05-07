@@ -4,7 +4,7 @@ from pytube import YouTube
 from faster_whisper import WhisperModel
 import tempfile
 import os
-from custom_cipher import Cipher as CustomCipher
+from .custom_cipher import Cipher as CustomCipher
 from unittest.mock import patch
 
 
