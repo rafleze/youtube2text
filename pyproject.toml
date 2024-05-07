@@ -13,6 +13,15 @@ omit = [
     ".venv/*",
     "tests/*",
     "youtube_to_text.py",
+    "custom_cipher.py",
     "*/__init__.py",
 ]
 source = ["."]
+
+[tool.ruff]
+extend-exclude = [
+    "__pycache__",
+    ".pytest_cache",
+    ".vscode*",
+    "custom_cipher.py",
+]

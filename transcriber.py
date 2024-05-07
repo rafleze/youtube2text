@@ -4,8 +4,13 @@ from pytube import YouTube
 from faster_whisper import WhisperModel
 import tempfile
 import os
+from custom_cipher import Cipher as CustomCipher
+from unittest.mock import patch
 
 
+@patch(
+    "pytube.extract.Cipher", CustomCipher
+)  # Patch the Cipher class because it's not working: look at the issue https://github.com/pytube/pytube/issues/1918
 def transcribe(link, language="en", settings={}):
     """Transcribe a youtube video."""
     if not settings:
@@ -30,14 +35,3 @@ def transcribe(link, language="en", settings={}):
             os.remove(temp_file_path)
             os.remove(filename)
             return result
-
-
-# settings = {
-#     "model_size_or_path": "large-v3",
-#     "device": "cpu",
-#     "compute_type": "int8",
-# }
-# x, _ = transcribe("https://www.youtube.com/watch?v=Jo07YIB3HBU", language="it", settings=settings)
-
-# for el in x:
-#     print(el.text)
