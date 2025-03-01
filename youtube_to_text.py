@@ -56,14 +56,12 @@ class TranscriptionForm(CatForm):
     def submit(self, form_data):
         """Submit the form."""
         settings = self.cat.mad_hatter.plugins["youtube2text"].load_settings()
-        try:
-            segments, _ = transcribe(
-                form_data["youtube_link"], form_data["language"], settings
-            )
-            result = "".join([s.text for s in segments])
-            prompt = f"Summerize the following text: {result}"
-            summary = self.cat.llm(prompt)
-            output = f"The transcription is: \n{result}\n\nSummary: {summary}"
-            return {"output": output}
-        except Exception as e:
-            return {"output": f"An error occurred: {e}"}
+
+        segments, _ = transcribe(
+            form_data["youtube_link"], form_data["language"], settings
+        )
+        result = "".join([s.text for s in segments])
+        prompt = f"Summerize the following text: {result}"
+        summary = self.cat.llm(prompt)
+        output = f"The transcription is: \n{result}\n\nSummary: {summary}"
+        return {"output": output}
