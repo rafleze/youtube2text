@@ -1,5 +1,4 @@
 """Transcribe a youtube video."""
-
 from faster_whisper import WhisperModel
 import tempfile
 import os

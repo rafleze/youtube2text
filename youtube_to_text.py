@@ -56,7 +56,6 @@ class TranscriptionForm(CatForm):
     def submit(self, form_data):
         """Submit the form."""
         settings = self.cat.mad_hatter.plugins["youtube2text"].load_settings()
-
         segments, _ = transcribe(
             form_data["youtube_link"], form_data["language"], settings
         )
