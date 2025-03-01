@@ -1,6 +1,6 @@
 {
-    "name": "Youtube 2 text",
-    "version": "0.0.1",
+    "name": "Youtube 2 Text",
+    "version": "0.0.2",
     "description": "A plugin to transcript a youtube video to text. Just past the video link and wait for the response!",
     "author_name": "rafleze",
     "author_url": "https://github.com/rafleze",

@@ -4,17 +4,15 @@ from unittest.mock import patch
 from ..transcriber import transcribe
 
 
-@patch("youtube2text.transcriber.YouTube")
+@patch("youtube2text.transcriber.download_audio")
 @patch("youtube2text.transcriber.WhisperModel")
-def test_transcribe_with_settings(mock_whisper_model, mock_youtube):
+def test_transcribe_with_settings(mock_whisper_model, mock_download_audio):
     """Test transcribe function with settings."""
 
     with open("tests/media/youtube/test.mp4", "w") as f:
         f.write("test")
 
-    mock_youtube.return_value.streams.filter.return_value.first.return_value.download.return_value = (
-        "tests/media/youtube/test.mp4"
-    )
+    mock_download_audio.return_value = "tests/media/youtube/test.mp4"
     mock_whisper_model.return_value.transcribe.return_value = [
         {"text": "Hello", "start": 0.0, "end": 1.0},
         {"text": "World", "start": 1.0, "end": 2.0},
@@ -36,16 +34,14 @@ def test_transcribe_with_settings(mock_whisper_model, mock_youtube):
     )
 
 
-@patch("youtube2text.transcriber.YouTube")
-def test_transcribe_without_settings(mock_youtube):
+@patch("youtube2text.transcriber.download_audio")
+def test_transcribe_without_settings(mock_download_audio):
     """Test transcribe function with settings."""
 
     with open("tests/media/youtube/test.mp4", "w") as f:
         f.write("test")
 
-    mock_youtube.return_value.streams.filter.return_value.first.return_value.download.return_value = (
-        "tests/media/youtube/test.mp4"
-    )
+    mock_download_audio.return_value = "tests/media/youtube/test.mp4"
     settings = {}
     with pytest.raises(Exception):
         transcribe(
@@ -55,14 +51,12 @@ def test_transcribe_without_settings(mock_youtube):
         )
 
 
-@patch("youtube2text.transcriber.YouTube")
-def test_transcribe_with_download_exception(mock_youtube):
+@patch("youtube2text.transcriber.download_audio")
+def test_transcribe_with_download_exception(mock_download_audio):
     """Test transcribe function with settings."""
 
     # mock youtube stream filter first download as exception
-    mock_youtube.return_value.streams.filter.return_value.first.return_value.download.side_effect = Exception(
-        "Download failed"
-    )
+    mock_download_audio.side_effect = Exception("Download failed")
     settings = {
         "model_size_or_path": "large-v3",
         "device": "cpu",
